@@ -1,0 +1,83 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #1e293b;
+  padding: 0 24px;
+  background: #0a1628;
+}
+
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+nav a:hover { color: #e2e8f0; }
+nav a.active { color: #38bdf8; border-bottom-color: #38bdf8; }
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #f1f5f9; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th { text-align: left; padding: 8px 12px; border-bottom: 1px solid #1e293b; color: #64748b; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+td { padding: 10px 12px; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
+tr:hover td { background: #1e293b; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.badge-frontier { background: #7c3aed22; color: #a78bfa; border: 1px solid #7c3aed44; }
+.badge-strong   { background: #0ea5e922; color: #38bdf8; border: 1px solid #0ea5e944; }
+.badge-fast     { background: #10b98122; color: #34d399; border: 1px solid #10b98144; }
+
+textarea {
+  width: 100%;
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  outline: none;
+}
+textarea:focus { border-color: #38bdf8; }
+
+button {
+  background: #38bdf8;
+  color: #0a1628;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button:hover { background: #7dd3fc; }
+button.secondary { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+button.secondary:hover { background: #334155; color: #e2e8f0; }
+
+.error { color: #f87171; font-size: 12px; margin-top: 8px; }
+.success { color: #34d399; font-size: 12px; margin-top: 8px; }
+
+.rank-1 td { color: #fbbf24; }
+.rank-1 td:first-child::before { content: '★ '; }
