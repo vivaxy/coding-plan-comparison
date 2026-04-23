@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Two independent TypeScript packages in a single repo:
 
-- **`cli/`** — npm package `coding-plan-usage`. Node CLI that reads local files from installed AI coding tools (Claude Code, Codex, Cursor, Windsurf, Copilot, Gemini) and outputs a `UsageProfile` JSON. Entry: `cli/src/index.ts` → `cli/dist/index.js`.
+- **`cli/`** — npm package `coding-plan-comparison`. Node CLI that reads local files from installed AI coding tools (Claude Code, Codex, Cursor, Windsurf, Copilot, Gemini) and outputs a `UsageProfile` JSON. Entry: `cli/src/index.ts` → `cli/dist/index.js`.
 - **`web/`** — Vite + vanilla TS + ECharts static site. Three hash-routed views (`#/compare`, `#/import`, `#/recommend`) in `web/src/views/`. Deployed to GitHub Pages via `.github/workflows/deploy.yml`.
 
 The two halves exchange data via JSON pasted into the Import view.
@@ -64,6 +64,8 @@ interface Adapter {
 ### Deployment
 
 `.github/workflows/deploy.yml` builds `web/` on push to `main` and publishes `web/dist/` to the `gh-pages` branch. Vite `base: '/coding-plan-comparison/'` matches the Pages subpath.
+
+`.github/workflows/release-cli.yml` publishes `cli/` to npm on push to `main` (path filter: `cli/**`). Versioning is driven by Conventional Commits via `semantic-release`. Tag format: `cli-vX.Y.Z`. Uses npm Trusted Publishing (OIDC) — no `NPM_TOKEN` secret required.
 
 ## Conventions
 

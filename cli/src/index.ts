@@ -22,7 +22,7 @@ function parseDate(s: string, label: string, endOfDay = false): Date {
 
 function printUsage(): void {
   console.log(`
-Usage: coding-plan-usage [options]
+Usage: coding-plan-comparison [options]
 
 Options:
   --json              Print JSON only (suppress summary table)

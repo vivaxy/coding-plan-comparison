@@ -41,7 +41,7 @@ export function renderImport(app: HTMLElement): void {
 
   app.innerHTML = `
     <h2>Import Usage Profile</h2>
-    <p style="color:#94a3b8;margin-bottom:16px">Run <code style="background:#1e293b;padding:2px 6px;border-radius:4px">npx coding-plan-usage --copy</code> then paste the JSON below.</p>
+    <p style="color:#94a3b8;margin-bottom:16px">Run <code style="background:#1e293b;padding:2px 6px;border-radius:4px">npx coding-plan-comparison --copy</code> then paste the JSON below.</p>
     <textarea rows="10" id="profile-json" placeholder="Paste JSON here..."></textarea>
     <button id="btn-import" style="margin-top:12px">Import</button>
     <div id="import-feedback"></div>
