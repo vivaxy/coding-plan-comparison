@@ -38,6 +38,7 @@ h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #f1f5f9; }
 
 table { width: 100%; border-collapse: collapse; margin-top: 12px; }
 th { text-align: left; padding: 8px 12px; border-bottom: 1px solid #1e293b; color: #64748b; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+th[title] { cursor: help; text-decoration: underline dotted #334155; text-underline-offset: 3px; }
 td { padding: 10px 12px; border-bottom: 1px solid #1e293b; color: #cbd5e1; }
 tr:hover td { background: #1e293b; }
 

@@ -116,8 +116,8 @@ export function renderCompare(app: HTMLElement): void {
           <th>Provider</th>
           <th>Plan</th>
           <th>Price/mo</th>
-          <th>Best Model Tier</th>
-          <th>Limit Type</th>
+          <th title="The highest-capability model included in this plan. frontier = flagship reasoning model (e.g. Opus, GPT-5). strong = mid-tier coding model (e.g. Sonnet, GPT-4.1). fast = small, cheap, low-latency model (e.g. Haiku, GPT-4o-mini). Higher tier generally means better coding ability but tighter usage limits.">Best Model Tier ⓘ</th>
+          <th title="The unit and window that caps your usage. messages-5h = rolling 5-hour chat cap (burst control). messages-weekly = weekly chat cap. tokens-monthly = monthly token budget (compute-accounted). requests-monthly / premium-requests-monthly = monthly request count, with &quot;premium&quot; meaning top-model access. credits-monthly = vendor-specific credit pool.">Limit Type ⓘ</th>
           <th>Limit Value</th>
           <th>Est. $/1M tokens</th>
         </tr>
