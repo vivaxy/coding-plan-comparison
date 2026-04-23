@@ -14,57 +14,7 @@ export interface PlanScore {
   capabilityWeight: number
 }
 
-/**
- * Score a single plan against the user's monthly usage.
- *
- * @param userUsageUsd   - Your total monthly usage expressed as equivalent USD
- *                         (compute with metricsToUsd() from normalize.ts)
- * @param plan           - The plan to evaluate (from plans.json)
- *
- * Returns a number — higher means better cost-effectiveness.
- *
- * ─── Trade-offs to consider ────────────────────────────────────────────────
- *
- * 1. OVERFLOW PENALTY
- *    If userUsageUsd > capacityUsd, the plan can't cover your usage.
- *    How harshly should you penalize this? Options:
- *      a) Hard cutoff: score = 0 if overflow (strict — any overflow = useless)
- *      b) Soft penalty: reduce score proportionally to overflow ratio
- *      c) Ignore overflow: let the ranking float (useful if you're willing to
- *         self-throttle or upgrade mid-month)
- *
- * 2. CAPABILITY WEIGHT
- *    A $20/mo plan with only Sonnet isn't equal to a $20/mo plan with Opus.
- *    planCapabilityWeight() returns 1.0 / 0.7 / 0.4 for frontier/strong/fast.
- *    Should this be linear? Or should frontier plans get a larger bonus?
- *
- * 3. UTILIZATION
- *    A plan you're using at 95% vs 5% capacity — are they equally good?
- *    Very low utilization = you're paying for headroom you don't need.
- *    Very high utilization = you might hit limits and get throttled.
- *    Some scorers prefer plans where coverage ≈ 80-90%.
- *
- * 4. PRICE WEIGHT
- *    Should a $100 plan need to be proportionally better than a $20 plan,
- *    or should it just need to be better? (valuePerDollar naturally handles this)
- *
- * ─── Variables available to you ────────────────────────────────────────────
- *   userUsageUsd       — your monthly usage in equivalent USD
- *   capacityUsd        — this plan's monthly capacity in equivalent USD
- *   capabilityWeight   — 1.0 / 0.7 / 0.4 (model quality factor)
- *   monthlyPriceUsd    — plan's monthly price
- *   coverage           — min(userUsageUsd / capacityUsd, 1)   ← [0, 1]
- *   fit                — 1 if within limits, else <1 (overflow penalty factor)
- *
- * ─── Example approach (do not copy — write your own) ───────────────────────
- *   const coverage = Math.min(userUsageUsd / capacityUsd, 1)
- *   const fit = userUsageUsd <= capacityUsd ? 1 : capacityUsd / userUsageUsd
- *   return (coverage * capabilityWeight * fit) / monthlyPriceUsd
- */
-function scorePlan(
-  _userUsageUsd: number,
-  plan: Plan,
-): number {
+function scorePlan(plan: Plan): number {
   const capacityUsd = planCapacityUsd(plan)
   const capabilityWeight = planCapabilityWeight(plan)
   const monthlyPriceUsd = plan.monthlyPriceUsd === 0 ? 0.01 : plan.monthlyPriceUsd
@@ -86,7 +36,7 @@ export function rankPlans(allMetrics: ToolMetrics[], allPlans: Plan[]): PlanScor
     .map((plan): PlanScore => {
       const capacityUsd = planCapacityUsd(plan)
       const capabilityWeight = planCapabilityWeight(plan)
-      const score = scorePlan(userUsageUsd, plan)
+      const score = scorePlan(plan)
       const coveragePct = Math.min(userUsageUsd / (capacityUsd || 1), 1) * 100
       const overflowPct = userUsageUsd > capacityUsd
         ? ((userUsageUsd - capacityUsd) / capacityUsd) * 100

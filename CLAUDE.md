@@ -59,7 +59,7 @@ interface Adapter {
 `web/src/main.ts` is a minimal hash router calling `renderCompare`, `renderImport`, or `renderRecommend`. Plan catalog lives in `web/src/data/plans.json`. Core logic:
 
 - `web/src/lib/normalize.ts` — converts `ToolMetrics` and `PlanLimit`s to equivalent USD so usage and plan capacity are comparable.
-- `web/src/lib/score.ts` — `scorePlan()` is **intentionally unimplemented** (a Learning Mode hand-off). The function body is a TODO for the user to fill in; `rankPlans()` around it is complete. Do not "fix" the stub unless asked.
+- `web/src/lib/score.ts` — `scorePlan()` ranks plans price-first (lower monthly price wins) with small tie-breakers for capacity and model capability. `rankPlans()` also computes `coveragePct`/`overflowPct` for UI display.
 
 ### Deployment
 

@@ -48,8 +48,6 @@ export function renderRecommend(app: HTMLElement): void {
   const totalUsd = ranked.length > 0 ? ranked[0].userUsageUsd : 0
   const toolCount = profile.tools.filter((t) => t.metrics !== null).length
 
-  const allZero = ranked.every((r) => r.score === 0)
-
   const capabilityBadge = (tier: Tier) =>
     `<span class="badge badge-${tier}">${tier}</span>`
 
@@ -70,10 +68,6 @@ export function renderRecommend(app: HTMLElement): void {
     </tr>`
   }).join('\n')
 
-  const notice = allZero
-    ? `<div class="notice">Scores are all 0 — implement the scoring formula in web/src/lib/score.ts to see ranked results.</div>`
-    : ''
-
   app.innerHTML = `
     <h2>Recommended Plans</h2>
     <p>Based on ~$${totalUsd.toFixed(2)}/mo equivalent API usage across ${toolCount} tool${toolCount !== 1 ? 's' : ''} over ${dateRange}</p>
@@ -86,7 +80,6 @@ export function renderRecommend(app: HTMLElement): void {
       </thead>
       <tbody>${rows}</tbody>
     </table>
-    ${notice}
     <button id="clear-profile">Clear Profile</button>
   `
 
