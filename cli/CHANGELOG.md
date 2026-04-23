@@ -1,3 +1,10 @@
+# [coding-plan-comparison-v0.2.1](https://github.com/vivaxy/coding-plan-comparison/compare/cli-v0.2.0...cli-v0.2.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* **cli:** fail loudly when sync-schema cut marker is missing ([fdc493d](https://github.com/vivaxy/coding-plan-comparison/commit/fdc493de8e72df5d3ebe9ffa74718547901bbcbc))
+
 # [coding-plan-comparison-v0.2.0](https://github.com/vivaxy/coding-plan-comparison/compare/cli-v0.1.0...cli-v0.2.0) (2026-04-23)
 
 

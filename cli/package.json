@@ -1,6 +1,6 @@
 {
   "name": "coding-plan-comparison",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "CLI to collect AI coding tool usage data for plan comparison",
   "type": "module",
   "main": "dist/index.js",
