@@ -13,7 +13,7 @@ Compare AI coding subscription plans (Claude Max, ChatGPT Pro, Cursor Ultra, Win
    ```sh
    npx coding-plan-comparison --copy
    ```
-2. Open the [webpage](#) and go to the **Import** tab.
+2. Open the [webpage](https://vivaxy.github.io/coding-plan-comparison/) and go to the **Import** tab.
 3. Paste the JSON and click **Import**.
 4. Check the **Recommend** tab — your highest-value plan is ranked first.
 
