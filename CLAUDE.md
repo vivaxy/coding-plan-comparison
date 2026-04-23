@@ -8,6 +8,7 @@ Two independent TypeScript packages in a single repo:
 
 - **`cli/`** — npm package `coding-plan-comparison`. Node CLI that reads local files from installed AI coding tools (Claude Code, Codex, Cursor, Windsurf, Copilot, Gemini) and outputs a `UsageProfile` JSON. Entry: `cli/src/index.ts` → `cli/dist/index.js`.
 - **`web/`** — Vite + vanilla TS + ECharts static site. Three hash-routed views (`#/compare`, `#/import`, `#/recommend`) in `web/src/views/`. Deployed to GitHub Pages via `.github/workflows/deploy.yml`.
+- **`scripts/fetch-plans/`** — build-time helper. Scrapes vendor pricing pages and overwrites `web/src/data/plans.json`. Run manually via `npm start --prefix scripts/fetch-plans -- --write`. See `scripts/fetch-plans/README.md`.
 
 The two halves exchange data via JSON pasted into the Import view.
 

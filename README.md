@@ -6,6 +6,7 @@ Compare AI coding subscription plans (Claude Max, ChatGPT Pro, Cursor Ultra, Win
 
 - **`web/`** — Static webpage. Open `web/dist/index.html` in a browser or visit the GitHub Pages URL. No server required.
 - **`cli/`** — Local CLI: `npx coding-plan-comparison`. Reads AI coding tool data from your machine and outputs a usage profile JSON to paste into the webpage.
+- **`scripts/fetch-plans/`** — Refreshes `web/src/data/plans.json` by scraping vendor pricing pages. Run manually; see [scripts/fetch-plans/README.md](scripts/fetch-plans/README.md).
 
 ## Quickstart
 

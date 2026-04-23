@@ -53,7 +53,7 @@ export interface ManualPrompt {
 
 export interface Plan {
   id: string;           // e.g. "anthropic-max-100"
-  provider: 'anthropic' | 'openai' | 'cursor' | 'windsurf' | 'github' | 'google';
+  provider: 'anthropic' | 'openai' | 'cursor' | 'windsurf' | 'github' | 'google' | 'zed' | 'amazon';
   name: string;         // e.g. "Claude Max $100"
   monthlyPriceUsd: number;
   models: PlanModel[];

@@ -437,11 +437,27 @@
     ]
   },
   {
-    "id": "github-copilot-individual",
+    "id": "github-copilot-free",
     "provider": "github",
-    "name": "GitHub Copilot Pro",
-    "monthlyPriceUsd": 10,
+    "name": "Copilot Free",
+    "monthlyPriceUsd": 0,
     "models": [
+      {
+        "name": "claude-haiku-4-5",
+        "tier": "fast",
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
+      },
+      {
+        "name": "claude-opus-4-6",
+        "tier": "frontier",
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
+      },
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
@@ -451,11 +467,87 @@
         }
       },
       {
-        "name": "gpt-4o",
+        "name": "gemini-2-5-pro",
+        "tier": "strong"
+      }
+    ],
+    "limits": [
+      {
+        "kind": "premium-requests-monthly",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "github-copilot-pro",
+    "provider": "github",
+    "name": "Copilot Pro",
+    "monthlyPriceUsd": 10,
+    "models": [
+      {
+        "name": "claude-haiku-4-5",
+        "tier": "fast",
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
+      },
+      {
+        "name": "claude-opus-4-6",
+        "tier": "frontier",
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
+      },
+      {
+        "name": "claude-sonnet-4-6",
         "tier": "strong",
         "payAsYouGoUsd": {
-          "input": 2.5,
-          "output": 10
+          "input": 3,
+          "output": 15
+        }
+      },
+      {
+        "name": "gemini-2-5-pro",
+        "tier": "strong"
+      }
+    ],
+    "limits": [
+      {
+        "kind": "premium-requests-monthly",
+        "value": 300
+      }
+    ]
+  },
+  {
+    "id": "github-copilot-business",
+    "provider": "github",
+    "name": "Copilot Business",
+    "monthlyPriceUsd": 19,
+    "models": [
+      {
+        "name": "claude-haiku-4-5",
+        "tier": "fast",
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
+      },
+      {
+        "name": "claude-opus-4-6",
+        "tier": "frontier",
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
+      },
+      {
+        "name": "claude-sonnet-4-6",
+        "tier": "strong",
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
         }
       },
       {
@@ -473,9 +565,17 @@
   {
     "id": "github-copilot-pro-plus",
     "provider": "github",
-    "name": "GitHub Copilot Pro+",
+    "name": "Copilot Pro+",
     "monthlyPriceUsd": 39,
     "models": [
+      {
+        "name": "claude-haiku-4-5",
+        "tier": "fast",
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
+      },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
@@ -490,14 +590,6 @@
         "payAsYouGoUsd": {
           "input": 3,
           "output": 15
-        }
-      },
-      {
-        "name": "gpt-4o",
-        "tier": "strong",
-        "payAsYouGoUsd": {
-          "input": 2.5,
-          "output": 10
         }
       },
       {
@@ -513,45 +605,19 @@
     ]
   },
   {
-    "id": "github-copilot-business",
-    "provider": "github",
-    "name": "GitHub Copilot Business",
-    "monthlyPriceUsd": 19,
-    "models": [
-      {
-        "name": "claude-sonnet-4-6",
-        "tier": "strong",
-        "payAsYouGoUsd": {
-          "input": 3,
-          "output": 15
-        }
-      },
-      {
-        "name": "gpt-4o",
-        "tier": "strong",
-        "payAsYouGoUsd": {
-          "input": 2.5,
-          "output": 10
-        }
-      },
-      {
-        "name": "gemini-2-5-pro",
-        "tier": "strong"
-      }
-    ],
-    "limits": [
-      {
-        "kind": "premium-requests-monthly",
-        "value": 300
-      }
-    ]
-  },
-  {
     "id": "github-copilot-enterprise",
     "provider": "github",
-    "name": "GitHub Copilot Enterprise",
+    "name": "Copilot Enterprise",
     "monthlyPriceUsd": 39,
     "models": [
+      {
+        "name": "claude-haiku-4-5",
+        "tier": "fast",
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
+      },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
@@ -566,14 +632,6 @@
         "payAsYouGoUsd": {
           "input": 3,
           "output": 15
-        }
-      },
-      {
-        "name": "gpt-4o",
-        "tier": "strong",
-        "payAsYouGoUsd": {
-          "input": 2.5,
-          "output": 10
         }
       },
       {
@@ -683,5 +741,73 @@
         ]
       }
     ]
+  },
+  {
+    "id": "zed-personal",
+    "provider": "zed",
+    "name": "Zed Personal",
+    "monthlyPriceUsd": 0,
+    "models": [
+      {
+        "name": "zed-agent",
+        "tier": "fast"
+      }
+    ],
+    "limits": []
+  },
+  {
+    "id": "zed-pro",
+    "provider": "zed",
+    "name": "Zed Pro",
+    "monthlyPriceUsd": 10,
+    "models": [
+      {
+        "name": "claude-sonnet-4-6",
+        "tier": "strong",
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
+      },
+      {
+        "name": "zed-agent",
+        "tier": "fast"
+      }
+    ],
+    "limits": []
+  },
+  {
+    "id": "amazon-q-free",
+    "provider": "amazon",
+    "name": "Amazon Q Developer Free",
+    "monthlyPriceUsd": 0,
+    "models": [
+      {
+        "name": "amazon-q-agent",
+        "tier": "fast"
+      }
+    ],
+    "limits": []
+  },
+  {
+    "id": "amazon-q-pro",
+    "provider": "amazon",
+    "name": "Amazon Q Developer Pro",
+    "monthlyPriceUsd": 19,
+    "models": [
+      {
+        "name": "claude-sonnet-4-6",
+        "tier": "strong",
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
+      },
+      {
+        "name": "amazon-q-agent",
+        "tier": "fast"
+      }
+    ],
+    "limits": []
   }
 ]
