@@ -62,22 +62,17 @@ export interface PlanScore {
  *   return (coverage * capabilityWeight * fit) / monthlyPriceUsd
  */
 function scorePlan(
-  userUsageUsd: number,
+  _userUsageUsd: number,
   plan: Plan,
 ): number {
   const capacityUsd = planCapacityUsd(plan)
   const capabilityWeight = planCapabilityWeight(plan)
   const monthlyPriceUsd = plan.monthlyPriceUsd === 0 ? 0.01 : plan.monthlyPriceUsd
 
-  // TODO: implement your scoring formula here (5-10 lines)
-  // Use the variables above: userUsageUsd, capacityUsd, capabilityWeight, monthlyPriceUsd
-  // Return a number — higher means better value.
-
-  void userUsageUsd
-  void capacityUsd
-  void capabilityWeight
-  void monthlyPriceUsd
-  return 0
+  const priceScore = -monthlyPriceUsd
+  const capacityBonus = (1 - 1 / (1 + capacityUsd)) * 1e-3
+  const capabilityBonus = capabilityWeight * 1e-6
+  return priceScore + capacityBonus + capabilityBonus
 }
 
 /**
