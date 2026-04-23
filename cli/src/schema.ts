@@ -25,7 +25,6 @@ export interface ToolUsage {
   verdict: 'rich' | 'partial' | 'minimal' | 'manual';
   metrics: ToolMetrics | null;     // null when verdict === 'manual'
   manualPrompts?: ManualPrompt[];  // present when the user must fill numbers manually
-  notes?: string[];
 }
 
 // Aggregated usage counters for one tool over the requested date range

@@ -30,7 +30,6 @@ export class GeminiAdapter implements Adapter {
           hint: 'Visit https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/quotas'
         }
       ],
-      notes: ['Gemini CLI stores config only. Fill in usage from the Google Cloud Console.']
     }
   }
 }

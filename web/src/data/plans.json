@@ -4,33 +4,42 @@
     "provider": "anthropic",
     "name": "Claude Pro",
     "monthlyPriceUsd": 20,
-    "annualDiscountPct": 15,
     "models": [
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "claude-haiku-4-5",
         "tier": "fast",
-        "payAsYouGoUsd": { "input": 1, "output": 5 }
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
       }
     ],
     "limits": [
       {
         "kind": "messages-5h",
         "value": 45,
-        "appliesTo": ["claude-sonnet-4-6", "claude-opus-4-6"]
+        "appliesTo": [
+          "claude-sonnet-4-6",
+          "claude-opus-4-6"
+        ]
       }
-    ],
-    "sourceUrl": "https://claude.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "anthropic-max-100",
@@ -41,28 +50,38 @@
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "claude-haiku-4-5",
         "tier": "fast",
-        "payAsYouGoUsd": { "input": 1, "output": 5 }
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
       }
     ],
     "limits": [
       {
         "kind": "messages-5h",
         "value": 225,
-        "appliesTo": ["claude-sonnet-4-6", "claude-opus-4-6"]
+        "appliesTo": [
+          "claude-sonnet-4-6",
+          "claude-opus-4-6"
+        ]
       }
-    ],
-    "sourceUrl": "https://claude.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "anthropic-max-200",
@@ -73,28 +92,38 @@
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "claude-haiku-4-5",
         "tier": "fast",
-        "payAsYouGoUsd": { "input": 1, "output": 5 }
+        "payAsYouGoUsd": {
+          "input": 1,
+          "output": 5
+        }
       }
     ],
     "limits": [
       {
         "kind": "messages-5h",
         "value": 900,
-        "appliesTo": ["claude-sonnet-4-6", "claude-opus-4-6"]
+        "appliesTo": [
+          "claude-sonnet-4-6",
+          "claude-opus-4-6"
+        ]
       }
-    ],
-    "sourceUrl": "https://claude.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "openai-chatgpt-plus",
@@ -105,33 +134,44 @@
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "o3",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 2, "output": 8 }
+        "payAsYouGoUsd": {
+          "input": 2,
+          "output": 8
+        }
       },
       {
         "name": "o4-mini",
         "tier": "fast",
-        "payAsYouGoUsd": { "input": 1.1, "output": 4.4 }
+        "payAsYouGoUsd": {
+          "input": 1.1,
+          "output": 4.4
+        }
       }
     ],
     "limits": [
       {
         "kind": "messages-5h",
         "value": 150,
-        "appliesTo": ["gpt-4o"]
+        "appliesTo": [
+          "gpt-4o"
+        ]
       },
       {
         "kind": "messages-weekly",
         "value": 100,
-        "appliesTo": ["o3"]
+        "appliesTo": [
+          "o3"
+        ]
       }
-    ],
-    "sourceUrl": "https://chatgpt.com/pricing/",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "openai-chatgpt-pro",
@@ -142,27 +182,37 @@
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "o1-pro",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 150, "output": 600 }
+        "payAsYouGoUsd": {
+          "input": 150,
+          "output": 600
+        }
       },
       {
         "name": "o3",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 2, "output": 8 }
+        "payAsYouGoUsd": {
+          "input": 2,
+          "output": 8
+        }
       },
       {
         "name": "o4-mini",
         "tier": "fast",
-        "payAsYouGoUsd": { "input": 1.1, "output": 4.4 }
+        "payAsYouGoUsd": {
+          "input": 1.1,
+          "output": 4.4
+        }
       }
     ],
-    "limits": [],
-    "sourceUrl": "https://chatgpt.com/pricing/",
-    "lastVerified": "2026-04-22"
+    "limits": []
   },
   {
     "id": "cursor-hobby",
@@ -179,28 +229,33 @@
       {
         "kind": "requests-monthly",
         "value": 50,
-        "appliesTo": ["cursor-agent"]
+        "appliesTo": [
+          "cursor-agent"
+        ]
       }
-    ],
-    "sourceUrl": "https://cursor.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "cursor-pro",
     "provider": "cursor",
     "name": "Cursor Pro",
     "monthlyPriceUsd": 20,
-    "annualDiscountPct": 20,
     "models": [
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -215,38 +270,49 @@
       {
         "kind": "requests-monthly",
         "value": 500,
-        "appliesTo": ["frontier-models"]
+        "appliesTo": [
+          "frontier-models"
+        ]
       }
-    ],
-    "sourceUrl": "https://cursor.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "cursor-ultra",
     "provider": "cursor",
     "name": "Cursor Ultra",
     "monthlyPriceUsd": 200,
-    "annualDiscountPct": 20,
     "models": [
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "o3",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 2, "output": 8 }
+        "payAsYouGoUsd": {
+          "input": 2,
+          "output": 8
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -261,11 +327,11 @@
       {
         "kind": "requests-monthly",
         "value": 10000,
-        "appliesTo": ["frontier-models"]
+        "appliesTo": [
+          "frontier-models"
+        ]
       }
-    ],
-    "sourceUrl": "https://cursor.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "windsurf-free",
@@ -282,11 +348,11 @@
       {
         "kind": "credits-monthly",
         "value": 25,
-        "appliesTo": ["cascade-prompts"]
+        "appliesTo": [
+          "cascade-prompts"
+        ]
       }
-    ],
-    "sourceUrl": "https://windsurf.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "windsurf-pro",
@@ -297,7 +363,10 @@
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "windsurf-swe-1-5",
@@ -310,18 +379,21 @@
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       }
     ],
     "limits": [
       {
         "kind": "credits-monthly",
         "value": 500,
-        "appliesTo": ["cascade-prompts"]
+        "appliesTo": [
+          "cascade-prompts"
+        ]
       }
-    ],
-    "sourceUrl": "https://windsurf.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "windsurf-teams",
@@ -332,7 +404,10 @@
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "windsurf-swe-1-5",
@@ -345,35 +420,43 @@
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       }
     ],
     "limits": [
       {
         "kind": "credits-monthly",
         "value": 500,
-        "appliesTo": ["cascade-prompts"]
+        "appliesTo": [
+          "cascade-prompts"
+        ]
       }
-    ],
-    "sourceUrl": "https://windsurf.com/pricing",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "github-copilot-individual",
     "provider": "github",
     "name": "GitHub Copilot Pro",
     "monthlyPriceUsd": 10,
-    "annualDiscountPct": 17,
     "models": [
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -385,9 +468,7 @@
         "kind": "premium-requests-monthly",
         "value": 300
       }
-    ],
-    "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "github-copilot-pro-plus",
@@ -398,17 +479,26 @@
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -420,9 +510,7 @@
         "kind": "premium-requests-monthly",
         "value": 1500
       }
-    ],
-    "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "github-copilot-business",
@@ -433,12 +521,18 @@
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -450,9 +544,7 @@
         "kind": "premium-requests-monthly",
         "value": 300
       }
-    ],
-    "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "github-copilot-enterprise",
@@ -463,17 +555,26 @@
       {
         "name": "claude-opus-4-6",
         "tier": "frontier",
-        "payAsYouGoUsd": { "input": 5, "output": 25 }
+        "payAsYouGoUsd": {
+          "input": 5,
+          "output": 25
+        }
       },
       {
         "name": "claude-sonnet-4-6",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 3, "output": 15 }
+        "payAsYouGoUsd": {
+          "input": 3,
+          "output": 15
+        }
       },
       {
         "name": "gpt-4o",
         "tier": "strong",
-        "payAsYouGoUsd": { "input": 2.5, "output": 10 }
+        "payAsYouGoUsd": {
+          "input": 2.5,
+          "output": 10
+        }
       },
       {
         "name": "gemini-2-5-pro",
@@ -485,9 +586,7 @@
         "kind": "premium-requests-monthly",
         "value": 1000
       }
-    ],
-    "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "google-gemini-code-assist-individual",
@@ -508,16 +607,18 @@
       {
         "kind": "requests-monthly",
         "value": 30000,
-        "appliesTo": ["code-completions"]
+        "appliesTo": [
+          "code-completions"
+        ]
       },
       {
         "kind": "requests-monthly",
         "value": 1000,
-        "appliesTo": ["chat-requests"]
+        "appliesTo": [
+          "chat-requests"
+        ]
       }
-    ],
-    "sourceUrl": "https://developers.google.com/gemini-code-assist/docs/overview",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "google-gemini-code-assist-standard",
@@ -538,16 +639,18 @@
       {
         "kind": "requests-monthly",
         "value": 45000,
-        "appliesTo": ["code-completions"]
+        "appliesTo": [
+          "code-completions"
+        ]
       },
       {
         "kind": "requests-monthly",
         "value": 1500,
-        "appliesTo": ["chat-requests"]
+        "appliesTo": [
+          "chat-requests"
+        ]
       }
-    ],
-    "sourceUrl": "https://codeassist.google/products/business",
-    "lastVerified": "2026-04-22"
+    ]
   },
   {
     "id": "google-gemini-code-assist-enterprise",
@@ -568,15 +671,17 @@
       {
         "kind": "requests-monthly",
         "value": 60000,
-        "appliesTo": ["code-completions"]
+        "appliesTo": [
+          "code-completions"
+        ]
       },
       {
         "kind": "requests-monthly",
         "value": 2000,
-        "appliesTo": ["chat-requests"]
+        "appliesTo": [
+          "chat-requests"
+        ]
       }
-    ],
-    "sourceUrl": "https://codeassist.google/products/business",
-    "lastVerified": "2026-04-22"
+    ]
   }
 ]

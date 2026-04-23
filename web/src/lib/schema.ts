@@ -25,7 +25,6 @@ export interface ToolUsage {
   verdict: 'rich' | 'partial' | 'minimal' | 'manual';
   metrics: ToolMetrics | null;     // null when verdict === 'manual'
   manualPrompts?: ManualPrompt[];  // present when the user must fill numbers manually
-  notes?: string[];
 }
 
 // Aggregated usage counters for one tool over the requested date range
@@ -56,11 +55,8 @@ export interface Plan {
   provider: 'anthropic' | 'openai' | 'cursor' | 'windsurf' | 'github' | 'google';
   name: string;         // e.g. "Claude Max $100"
   monthlyPriceUsd: number;
-  annualDiscountPct?: number;
   models: PlanModel[];
   limits: PlanLimit[];
-  sourceUrl: string;    // public pricing page — must be verifiable
-  lastVerified: string; // ISO date
 }
 
 export interface PlanModel {

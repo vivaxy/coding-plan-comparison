@@ -25,7 +25,6 @@ export class CopilotAdapter implements Adapter {
           hint: 'Same GitHub Copilot settings page — "Premium requests"'
         }
       ],
-      notes: ['GitHub Copilot usage data is server-side only. Fill in the values above from your GitHub settings.']
     }
   }
 }

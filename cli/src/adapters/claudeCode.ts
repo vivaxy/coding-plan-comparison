@@ -26,7 +26,7 @@ export class ClaudeCodeAdapter implements Adapter {
     try {
       slugDirs = await readdir(PROJECTS_DIR)
     } catch {
-      return { tool: 'claude-code', verdict: 'rich', metrics: emptyToolMetrics(), notes: [] }
+      return { tool: 'claude-code', verdict: 'rich', metrics: emptyToolMetrics() }
     }
 
     const metrics = emptyToolMetrics()
@@ -132,7 +132,6 @@ export class ClaudeCodeAdapter implements Adapter {
       tool: 'claude-code',
       verdict: 'rich',
       metrics,
-      notes: [],
     }
     return result
   }

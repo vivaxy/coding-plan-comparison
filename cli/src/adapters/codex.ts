@@ -273,7 +273,6 @@ export class CodexAdapter implements Adapter {
       tool: 'codex',
       verdict: 'partial',
       metrics,
-      notes: ['Token data not available from sqlite; run with --verbose to debug'],
     }
   }
 }
