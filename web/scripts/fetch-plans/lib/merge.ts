@@ -1,4 +1,4 @@
-import type { Plan } from '../../../web/src/lib/schema.ts'
+import type { Plan } from '../../../src/lib/schema.ts'
 import { PROVIDERS } from './assert.ts'
 
 // For each provider in PROVIDERS: if scraped has ≥1 plan, take scraped; else keep existing.

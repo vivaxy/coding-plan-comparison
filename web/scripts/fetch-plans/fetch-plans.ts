@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
-import type { Plan } from '../../web/src/lib/schema.ts'
+import type { Plan } from '../../src/lib/schema.ts'
 import type { Scraper } from './lib/types.ts'
 import { assertPlan } from './lib/assert.ts'
 import { mergePlans } from './lib/merge.ts'
@@ -17,7 +17,7 @@ import amazon    from './scrapers/amazon.ts'
 const SCRAPERS: Scraper[] = [anthropic, openai, cursor, windsurf, github, google, zed, amazon]
 
 const HERE = dirname(fileURLToPath(import.meta.url))
-const PLANS_JSON = resolve(HERE, '../../web/src/data/plans.json')
+const PLANS_JSON = resolve(HERE, '../../src/data/plans.json')
 
 async function main(): Promise<void> {
   const args = new Set(process.argv.slice(2))

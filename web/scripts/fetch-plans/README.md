@@ -10,17 +10,10 @@ Refreshes `web/src/data/plans.json` by scraping vendor pricing pages.
 ## Usage
 
 ```sh
-cd scripts/fetch-plans
+cd web
 npm install
-node --import tsx/esm fetch-plans.ts          # dry-run: print summary + diff
-node --import tsx/esm fetch-plans.ts --write  # overwrite web/src/data/plans.json
-```
-
-Or via the npm script:
-
-```sh
-npm start                   # dry-run
-npm start -- --write        # overwrite
+npm run fetch-plans             # dry-run: print summary + diff
+npm run fetch-plans -- --write  # overwrite src/data/plans.json
 ```
 
 Running without `--write` is always safe — it prints the per-vendor summary and a diff against the current file, but writes nothing.
@@ -28,8 +21,9 @@ Running without `--write` is always safe — it prints the per-vendor summary an
 ## Testing
 
 ```sh
-npm test        # runs all unit tests via node:test
-npm run typecheck   # TypeScript type-check only
+cd web
+npm run fetch-plans:test      # runs all unit tests via node:test
+npm run fetch-plans:typecheck # TypeScript type-check only
 ```
 
 Tests use saved fixture HTML from `scrapers/__fixtures__/`. They never hit the network.
@@ -37,16 +31,18 @@ Tests use saved fixture HTML from `scrapers/__fixtures__/`. They never hit the n
 ## Architecture
 
 ```
-fetch-plans.ts          # entry point: orchestrates scrapers, merges, diffs, writes
-lib/
-  fetch.ts              # fetchHtml(url): browser UA, 10s timeout, one retry on 5xx/network error
-  assert.ts             # assertPlan(plan): runtime Plan validator; throws on invalid field
-  merge.ts              # mergePlans(scraped, existing): per-provider replace-or-preserve
-  types.ts              # shared interfaces: ScrapeResult, Scraper
-scrapers/
-  <vendor>.ts           # one file per vendor; exports { provider, parse(html), scrape() }
-  __fixtures__/
-    <vendor>.html       # snapshot HTML used by tests
+scripts/fetch-plans/
+  fetch-plans.ts          # entry point: orchestrates scrapers, merges, diffs, writes
+  tsconfig.json           # extends web/tsconfig.json with NodeNext + Node type overrides
+  lib/
+    fetch.ts              # fetchHtml(url): browser UA, 10s timeout, one retry on 5xx/network error
+    assert.ts             # assertPlan(plan): runtime Plan validator; throws on invalid field
+    merge.ts              # mergePlans(scraped, existing): per-provider replace-or-preserve
+    types.ts              # shared interfaces: ScrapeResult, Scraper
+  scrapers/
+    <vendor>.ts           # one file per vendor; exports { provider, parse(html), scrape() }
+    __fixtures__/
+      <vendor>.html       # snapshot HTML used by tests
 ```
 
 ### Scraper interface
@@ -89,14 +85,14 @@ BYOK (bring-your-own-key) tools — Aider, Cline, Continue — are not in the ca
 
 ## How to add a new scraper
 
-1. **Add the provider token** to `Plan['provider']` in `web/src/lib/schema.ts`. Run `./node_modules/.bin/tsc --noEmit` in `web/` to verify.
+1. **Add the provider token** to `Plan['provider']` in `src/lib/schema.ts`. Run `npm run fetch-plans:typecheck` to verify.
 
 2. **Add to `lib/assert.ts`**: add the new token to the `PROVIDERS` array.
 
 3. **Create `scrapers/<vendor>.ts`** following this skeleton:
 
    ```ts
-   import type { Plan } from '../../../web/src/lib/schema.ts'
+   import type { Plan } from '../../../src/lib/schema.ts'
    import { fetchHtml } from '../lib/fetch.ts'
    import type { ScrapeResult, Scraper } from '../lib/types.ts'
 
@@ -125,12 +121,12 @@ BYOK (bring-your-own-key) tools — Aider, Cline, Continue — are not in the ca
 4. **Save a fixture** and write unit tests in `scrapers/<vendor>.test.ts`. Inspect the real HTML first:
 
    ```sh
-   # In scripts/fetch-plans/
-   node --import tsx/esm -e "
-     import { fetchHtml } from './lib/fetch.ts'
+   # From web/
+   npx tsx -e "
+     import { fetchHtml } from './scripts/fetch-plans/lib/fetch.ts'
      import { writeFile } from 'node:fs/promises'
      const html = await fetchHtml('https://vendor.com/pricing')
-     await writeFile('scrapers/__fixtures__/<vendor>.html', html)
+     await writeFile('scripts/fetch-plans/scrapers/__fixtures__/<vendor>.html', html)
      console.log(html.length, 'bytes')
    "
    ```
@@ -142,19 +138,20 @@ BYOK (bring-your-own-key) tools — Aider, Cline, Continue — are not in the ca
 ## Troubleshooting
 
 **A scraper that used to produce data now returns zero.**
-Vendor HTML changed. Run `node --import tsx/esm fetch-plans.ts` to see the warning. Refresh the fixture and re-inspect the HTML structure:
+Vendor HTML changed. Run `npm run fetch-plans` to see the warning. Refresh the fixture and re-inspect the HTML structure:
 
 ```sh
-node --import tsx/esm -e "
-  import { fetchHtml } from './lib/fetch.ts'
+# From web/
+npx tsx -e "
+  import { fetchHtml } from './scripts/fetch-plans/lib/fetch.ts'
   import { writeFile } from 'node:fs/promises'
   const html = await fetchHtml('<URL>')
-  await writeFile('scrapers/__fixtures__/<vendor>.html', html)
+  await writeFile('scripts/fetch-plans/scrapers/__fixtures__/<vendor>.html', html)
   console.log(html.length, 'bytes')
 "
 ```
 
-Then update the selector/regex in `scrapers/<vendor>.ts` and run `npm test` to confirm the fix.
+Then update the selector/regex in `scrapers/<vendor>.ts` and run `npm run fetch-plans:test` to confirm the fix.
 
 **The typecheck fails after adding a new provider.**
-Make sure you added the token to both `web/src/lib/schema.ts` **and** `lib/assert.ts`'s `PROVIDERS` array. The two must stay in sync manually — there is no automated coupling.
+Make sure you added the token to both `src/lib/schema.ts` **and** `lib/assert.ts`'s `PROVIDERS` array. The two must stay in sync manually — there is no automated coupling.

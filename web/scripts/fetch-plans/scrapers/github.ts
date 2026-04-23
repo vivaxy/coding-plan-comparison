@@ -1,5 +1,5 @@
 import { load, type CheerioAPI } from 'cheerio'
-import type { Plan, PlanModel, Tier } from '../../../web/src/lib/schema.ts'
+import type { Plan, PlanModel, Tier } from '../../../src/lib/schema.ts'
 import { fetchHtml } from '../lib/fetch.ts'
 import type { ScrapeResult, Scraper } from '../lib/types.ts'
 

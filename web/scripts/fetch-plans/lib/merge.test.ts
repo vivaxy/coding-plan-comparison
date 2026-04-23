@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
-import type { Plan } from '../../../web/src/lib/schema.ts'
+import type { Plan } from '../../../src/lib/schema.ts'
 import { mergePlans } from './merge.ts'
 
 function plan(overrides: Partial<Plan> & Pick<Plan, 'id' | 'provider' | 'monthlyPriceUsd'>): Plan {

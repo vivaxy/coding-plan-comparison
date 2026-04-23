@@ -1,4 +1,4 @@
-import type { Plan } from '../../../web/src/lib/schema.ts'
+import type { Plan } from '../../../src/lib/schema.ts'
 
 export interface ScrapeResult {
   plans: Plan[]

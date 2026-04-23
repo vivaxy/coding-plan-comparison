@@ -1,4 +1,4 @@
-import type { Plan } from '../../../web/src/lib/schema.ts'
+import type { Plan } from '../../../src/lib/schema.ts'
 import { fetchHtml } from '../lib/fetch.ts'
 import type { ScrapeResult, Scraper } from '../lib/types.ts'
 
