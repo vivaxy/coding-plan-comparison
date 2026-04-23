@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import type { UsageProfile } from './schema.js'
 import type { Adapter, DateRange } from './adapters/types.js'
 import { aggregate } from './aggregate.js'
