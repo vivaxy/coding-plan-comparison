@@ -1,5 +1,5 @@
 import type { Plan, PlanLimit, PlanModel, Tier } from '../lib/schema.js'
-import { TIER_RANK, AVG_TOKENS_PER_MESSAGE, WEEKS_PER_MONTH } from '../lib/schema.js'
+import { TIER_RANK, AVG_TOKENS_PER_MESSAGE, WEEKS_PER_MONTH, AVG_TOKENS_PER_REQ } from '../lib/schema.js'
 import plans from '../data/plans.json'
 import * as echarts from 'echarts'
 
@@ -39,8 +39,6 @@ function formatLimit(limit: PlanLimit | null): string {
     default:                     return `${limit.value}`
   }
 }
-
-const AVG_TOKENS_PER_REQ = 3_000      // rough average tokens per non-message request
 
 /**
  * Estimate how many M-tokens the plan's primary limit is equivalent to.

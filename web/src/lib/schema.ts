@@ -10,6 +10,7 @@ export const TIER_RANK: Record<Tier, number> = { frontier: 3, strong: 2, fast: 1
 export const WEEKS_PER_MONTH = 52 / 12  // 4.333…
 
 export const AVG_TOKENS_PER_MESSAGE = 2000  // rough tokens per user+assistant turn
+export const AVG_TOKENS_PER_REQ = 3000  // rough tokens per non-message request
 
 // The top-level output of the CLI — pasted into the webpage
 export interface UsageProfile {

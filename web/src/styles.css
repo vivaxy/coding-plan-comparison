@@ -73,9 +73,6 @@ button {
   transition: background 0.15s;
 }
 button:hover { background: #7dd3fc; }
-button.secondary { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
-button.secondary:hover { background: #334155; color: #e2e8f0; }
-
 .error { color: #f87171; font-size: 12px; margin-top: 8px; }
 .success { color: #34d399; font-size: 12px; margin-top: 8px; }
 
